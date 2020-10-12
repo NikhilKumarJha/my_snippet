@@ -1,1 +1,1 @@
-# my_snippet
+# Templates for C++
