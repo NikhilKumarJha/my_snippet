@@ -1,0 +1,56 @@
+{
+	// Place your snippets for cpp here. 
+	//Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. 
+	//The prefix is what is used to trigger the snippet
+	// the body will be expanded and inserted. 
+	//Possible variables are: $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+		
+
+	"Default cpp formate": {
+		"prefix": [
+			"include"
+		],
+		"body": [
+			"#include <bits/stdc++.h>",
+            "#define ll long long",
+            "#define ull unsigned long long",
+            "#define lld long double",
+			"#define w(x) ll x;cin>>x;while(x--)",
+			"#define all(x) x.begin(), x.end()",
+            "#define mod 1000000007",
+			"#define pi 3.141592653589",
+			"#define speed ios_base::sync_with_stdio(false), cin.tie(nullptr)",
+			"using namespace std;",
+			"\n",
+			"int main(){",
+			"    speed;",
+			"	$0",
+			"    return 0;",
+			"}",
+			"",
+		
+		],
+		"description": "This is a C++ snippet",
+	},
+	"My Custom hash":{
+		"prefix": "my_hash",
+		"body": [
+			"struct custom_hash {",
+			"	static uint64_t splitmix64(uint64_t x) {",
+			"        x += 0x9e3779b97f4a7c15;",
+			"        x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;",
+			"        x = (x ^ (x >> 27)) * 0x94d049bb133111eb;",
+			"        return x ^ (x >> 31);",
+			"    }",
+			
+			"	size_t operator()(uint64_t x) const {",
+			" 	   static const uint64_t FIXED_RANDOM = chrono::steady_clock::now().time_since_epoch().count();",
+			"		return splitmix64(x + FIXED_RANDOM);",
+			"	}",
+			"};",
+		],
+		"description": "Avoid collisions in Hash map",
+	},
+}
