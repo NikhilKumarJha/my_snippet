@@ -32,7 +32,6 @@
 			"    return 0;",
 			"}",
 			"",
-		
 		],
 		"description": "This is a C++ snippet",
 	},
@@ -55,4 +54,16 @@
 		],
 		"description": "Avoid collisions in Hash map",
 	},
+	"Check Prime or Not":{
+		"prefix": "ckprime",
+		"body": [
+			"bool is_prime(ll n){",
+			"	for(ll i=2;i*i<=n;i++){",
+			"		if(n%i==0)  return false;",
+			"	}",
+			"	return true;",
+			"}",
+		],
+		"description": "Check Prime or not",
+	}
 }
