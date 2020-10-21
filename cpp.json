@@ -117,7 +117,7 @@
 		"	}",
 		"	return res;",
 		"}",
-		] 
+		],
 		"description": "Factorial",
 	},
 }
