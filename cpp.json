@@ -21,7 +21,7 @@
             		"#define lld long double",
 			"#define w(x) ll x;cin>>x;while(x--)",
 			"#define all(x) x.begin(), x.end()",
-			"#define db(x) (cerr << #x << ": " << (x) << '\n')",
+			"#define db(x) (cerr << #x << \": \" << (x) << '\\n')",
 			"#define pi 3.141592653589",
 			"#define speed ios_base::sync_with_stdio(false), cin.tie(nullptr)",
 			"using namespace std;",
