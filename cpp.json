@@ -91,7 +91,7 @@
 	"Combinatorics1":{
 		"prefix": "ncr",
 		"body": [
-			"ull comb(ull n,ull r){",
+			"ull ncr(ull n,ull r){",
 			"	ll p=1,k=1;",
 			"	if(n-r<r)",
 			"		r=n-r;",
