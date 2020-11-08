@@ -23,6 +23,8 @@
 			"#define all(x) x.begin(), x.end()",
 			"#define db(x) (cout<<#x<<\":\"<<(x)<<'\\n')",
 			"#define pi 3.141592653589",
+			"#define lb lower_bound",
+			"#define ub upper_bound",
 			"#define speed ios_base::sync_with_stdio(false), cin.tie(nullptr)",
 			"using namespace std;",
 			"const ll mod=1000000007;",
