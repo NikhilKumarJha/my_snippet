@@ -13,8 +13,8 @@
 			"include"
 		],
 			"body": [
-			"//#pragma GCC optimize(\"Ofast\")",
-			"//#pragma GCC target(\"avx,avx2,fma\")",
+			"// #pragma GCC optimize(\"Ofast,unroll-loops\")",
+			"// #pragma GCC target(\"sse,sse2,sse3,ssse3,sse4,popcnt,mmx,avx,avx2\")",
 			"#include <bits/stdc++.h>",
             		"#define ll long long",
             		"#define ull unsigned long long",
