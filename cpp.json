@@ -25,6 +25,8 @@
 			"#define pi 3.141592653589",
 			"#define lb lower_bound",
 			"#define ub upper_bound",
+			"#define gcd(a,b)	__gcd(a,b)",
+			"#define lcm(a,b)	__detail::__lcm(a,b)",
 			"#define speed ios_base::sync_with_stdio(false), cin.tie(nullptr)",
 			"using namespace std;",
 			"const ll mod=1000000007;",
