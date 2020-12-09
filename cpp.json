@@ -38,6 +38,8 @@
 			"\n",
 			"int main(){",
 			"    speed;",
+			"	//freopen(\"input.txt\",\"r\",stdin);",
+			"	//freopen(\"output.txt\",\"w\",stdout);",
 			"	$0",
 			"    return 0;",
 			"}",
