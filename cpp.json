@@ -48,7 +48,7 @@
 		"description": "This is a C++ snippet",
 	},
 	"My Custom hash":{
-		"prefix": "my_hash",
+		"prefix": "custom_hash",
 		"body": [
 			"struct custom_hash {",
 			"	static uint64_t splitmix64(uint64_t x) {",
