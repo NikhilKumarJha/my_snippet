@@ -24,7 +24,7 @@
             		"#define lld long double",
 			"#define w(x) ll x;cin>>x;while(x--)",
 			"#define all(x) x.begin(), x.end()",
-			"#define db(x) (cout<<#x<<\":\"<<(x)<<'\\n')",
+			"#define bug(x) (cerr<<#x<<\":\"<<(x)<<'\\n')",
 			"#define lb lower_bound",
 			"#define ub upper_bound",
 			"#define gcd(a,b)	__gcd(a,b)",
