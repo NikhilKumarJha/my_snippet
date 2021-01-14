@@ -31,7 +31,7 @@
 			"#define lcm(a,b)	__detail::__lcm(a,b)",
 			"#define speed ios_base::sync_with_stdio(false), cin.tie(nullptr)",
 			"using namespace std;",
-			"const lld pi=3.141592653589;",
+			"const lld pi=3.1415926535897932384626433832795;",
 			"const ll INF=1e18;",
 			"const ll mod=1000000007;",
 			"const ll maxn=1e5+5;",
