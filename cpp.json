@@ -29,6 +29,7 @@
 			"#define ub upper_bound",
 			"#define gcd(a,b)	__gcd(a,b)",
 			"#define lcm(a,b)	__detail::__lcm(a,b)",
+			"#define goog(tno) cout << \"Case #\" << tno <<\": \"",
 			"#define speed ios_base::sync_with_stdio(false), cin.tie(nullptr)",
 			"using namespace std;",
 			"const lld pi=3.1415926535897932384626433832795;",
