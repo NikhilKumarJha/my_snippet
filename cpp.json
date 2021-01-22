@@ -254,5 +254,24 @@
 			"}",
 		],
 		"description": "prime number test",
-	}
+	},
+	"Seive Of Eratosthenes":{
+		"prefix": "seive",
+		"body":[
+			"bool prime[(ll)maxn];",
+			"vector<ll> primes;",
+			
+			"void seive(){",
+			"	memset(prime, true, sizeof(prime));",
+			"	for (ll p = 2; p * p <= maxn; p++){",
+			"		if (prime[p] == true) {",
+			"			for (ll i = p * p; i <= maxn; i += p)",
+			"				prime[i] = false;",
+			"		}",
+			"	}",
+			"	for (ll p = 2; p <= maxn; p++) if (prime[p])   primes.push_back(p);",
+			"}",
+		],
+		"description": "primes number till n",
+	},
 }
