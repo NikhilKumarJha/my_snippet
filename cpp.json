@@ -25,6 +25,7 @@
 			"#define ub upper_bound",
 			"#define gcd(a,b)	__gcd(a,b)",
 			"#define lcm(a,b)	__detail::__lcm(a,b)",
+			"#define iceil(n, x) (((n) + (x) - 1) / (x))",
 			"#define goog(tno) cout << \"Case #\" << tno <<\": \"",
 			"#define PRESS_F_TO_PAY_RESPECT ios_base::sync_with_stdio(false), cin.tie(nullptr)",
 			"using namespace std;\n",
