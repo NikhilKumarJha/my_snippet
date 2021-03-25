@@ -192,7 +192,7 @@
 			"  bool operator>(const ModInt &p) const { return x > p.x; }",
 			"  bool operator==(const ModInt &p) const { return x == p.x; }",
 			"  bool operator!=(const ModInt &p) const { return x != p.x; }",
-			 
+			"  string to_str() { return to_string(x); }",			 
 			"  ModInt inverse() const {",
 			"	ll a = x, b = mod, u = 1, v = 0, t;",
 			"	while(b > 0) {",
