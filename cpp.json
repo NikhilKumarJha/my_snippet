@@ -188,6 +188,8 @@
 			"  ModInt operator-(const ModInt &p) const { return ModInt(*this) -= p; }",
 			"  ModInt operator*(const ModInt &p) const { return ModInt(*this) *= p; }",
 			"  ModInt operator/(const ModInt &p) const { return ModInt(*this) /= p; }",
+			"  bool operator<(const ModInt &p) const { return x < p.x; }",
+			"  bool operator>(const ModInt &p) const { return x > p.x; }",
 			"  bool operator==(const ModInt &p) const { return x == p.x; }",
 			"  bool operator!=(const ModInt &p) const { return x != p.x; }",
 			 
