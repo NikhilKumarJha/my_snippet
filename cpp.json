@@ -392,5 +392,47 @@
 			"}",
 		],
 		"description": "Find Convex hull points",
+	},
+	"Disjoint Set Union":{
+		"prefix": "disjoint",
+		"body": [
+			"struct DSU{",
+			"	ll connected_comp;",
+			"	vector<ll> par,sz;",
+			"	void init(ll n){",
+			"		par=sz=vector<ll> (n+1,0);",
+			"		for(ll i=1;i<=n;i++){",
+			"			par[i]=i;",
+			"			sz[i]=1;",
+			"		}",
+			"		connected_comp=n;",
+			"	}",
+			
+			"	ll find_par(ll u){",             
+			"		while(u!=par[u]){",
+			"			par[u]=par[par[u]];",
+			"			u=par[u];",
+			"		}",
+			"		return u;",
+			"	}",
+			
+			"	void unite(ll u,ll v){",
+			"		ll par1=find_par(u);",
+			"		ll par2=find_par(v);",
+			"		if(par1==par2)  return;",
+			"		connected_comp--;",
+			"		if(sz[par1]>sz[par2])   swap(par1,par2);",
+			"		sz[par2]+=sz[par1];",
+			"		sz[par1]=0;",
+			"		par[par1]=par[par2];",
+			"	}",
+			
+			"	ll get_size(ll u){",
+			"		return sz[find_par(u)];",
+			"	}",
+			
+			"};",
+		],
+		"description": "Disjoint Set Union",
 	}
 }
