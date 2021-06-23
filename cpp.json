@@ -28,7 +28,6 @@
 			"using omap = tree<key, value, cmp, rb_tree_tag, tree_order_statistics_node_update>;\n",
 
 		    	"#define ll long long",
-		    	"#define ull unsigned long long",
 		    	"#define lld long double",
 			"#define w(x) ll x;cin>>x;while(x--)",
 			"#define all(x) x.begin(), x.end()",
