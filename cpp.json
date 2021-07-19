@@ -343,10 +343,10 @@
 	"Disjoint Set Union":{
 		"prefix": "disjoint",
 		"body": [
-			"struct DSU{",
+			"struct dsu{",
 			"	ll connected_comp;",
 			"	vector<ll> par,sz;",
-			"	void init(ll n){",
+			"	dsu(ll n){",
 			"		par=sz=vector<ll> (n+1,0);",
 			"		for(ll i=1;i<=n;i++){",
 			"			par[i]=i;",
