@@ -545,7 +545,7 @@
 		],
 		"description": "Sparse Table"
 	  },
-	"Segment Tree": {
+		"Segment Tree": {
 		"prefix": "segTree",
 		"body": [
 		  "struct node{",
@@ -594,14 +594,14 @@
 		  "    }",
 		  "",
 		  "    template <typename T>",
-		  "    void build(const T &str, const ll &v, const ll &tl, const ll &tr){",
+		  "    void build(const T &a, const ll &v, const ll &tl, const ll &tr){",
 		  "        if (tl == tr){",
-		  "            t[v]=str[tl];",
+		  "            t[v]=a[tl];",
 		  "            return;",
 		  "        }",
 		  "        ll tm = (tl + tr) >> 1;",
-		  "        build(str, v << 1, tl, tm);",
-		  "        build(str, v << 1 | 1, tm + 1, tr);",
+		  "        build(a, v << 1, tl, tm);",
+		  "        build(a, v << 1 | 1, tm + 1, tr);",
 		  "        t[v].merge(t[v << 1], t[v << 1 | 1]);",
 		  "    }",
 		  "",
