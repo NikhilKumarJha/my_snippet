@@ -657,7 +657,7 @@
 		  "    }",
 		  "    // combine the current update1 with the other update1",
 		  "    void combine(update1 &other, const ll &tl, const ll &tr){",
-		  "        v+=other.v;",
+		  "        // only needed for range updates",
 		  "    }",
 		  "    // store the correct information in the node1 x",
 		  "    void apply(node1 &x, const ll &tl, const ll &tr){",
