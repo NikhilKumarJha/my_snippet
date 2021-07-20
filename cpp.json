@@ -545,7 +545,7 @@
 		],
 		"description": "Sparse Table"
 	  },
-		"Segment Tree": {
+	"Segment Tree": {
 		"prefix": "segTree",
 		"body": [
 		  "struct node{",
@@ -559,18 +559,18 @@
 		  "    }",
 		  "}; ",
 		  "struct update{",
-		  "    ll v = 0;",
+		  "    ",
 		  "    update() {}",
 		  "    update(int val){",
-		  "        v = val;",
+		  "        ",
 		  "    }",
 		  "    // combine the current update with the other update",
 		  "    void combine(update &other, const ll &tl, const ll &tr){",
-		  "        v += other.v;",
+		  "        ",
 		  "    }",
 		  "    // store the correct information in the node x",
 		  "    void apply(node &x, const ll &tl, const ll &tr){",
-		  "        x.v += v;",
+		  "        ",
 		  "    }",
 		  "}; ",
 		  "template <typename node, typename update>",
