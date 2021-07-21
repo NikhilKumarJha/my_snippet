@@ -559,7 +559,7 @@
 		  "    update identity_transformation;",
 		  "",
 		  "    template<typename T>",
-		  "    segTree(vector<T> &a){",
+		  "    segTree(T &a){",
 		  "        len = a.size();",
 		  "        t.resize(4 * len);",
 		  "        u.resize(4 * len);",
