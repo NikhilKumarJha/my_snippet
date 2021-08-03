@@ -759,7 +759,7 @@
 		"        }",
 		"        return ans;",
 		"    }",
-		"    ll query(ll l,ll r){",
+		"    ll rquery(ll l,ll r){",
 		"        return query(r)-query(l-1);",
 		"    }",
 		"};"
