@@ -747,7 +747,7 @@
 		"            add(i,a[i]);",
 		"        }",
 		"    }",
-		"    void add(ll idx,ll val){",
+		"    void upd(ll idx,ll val){",
 		"        for(;idx<n;idx=(idx|(idx+1))){",
 		"            bit[idx]+=val;",
 		"        }",
