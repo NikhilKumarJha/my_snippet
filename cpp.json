@@ -744,7 +744,7 @@
 		"    }",
 		"    fenwick(vector<ll>& a):fenwick(a.size()){",
 		"        for(ll i=0;i<a.size();i++){",
-		"            add(i,a[i]);",
+		"            upd(i,a[i]);",
 		"        }",
 		"    }",
 		"    void upd(ll idx,ll val){",
