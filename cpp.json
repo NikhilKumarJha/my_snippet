@@ -8,7 +8,7 @@
 	// same ids are connected.
 		
 
-	"C++ Snippet": {
+	"C++ snippet": {
 		"prefix": "include",
 		"body": [
 		  "#include <bits/stdc++.h>",
@@ -46,7 +46,6 @@
 		  "",
 		  "#define ll long long",
 		  "#define lld long double",
-		  "#define w(x) ll x;cin>>x;while(x--)",
 		  "#define all(x) x.begin(), x.end()",
 		  "#define iceil(n, x) (((n) + (x) - 1) / (x))",
 		  "#define gcd(a,b)	__gcd(a,b)",
@@ -59,15 +58,21 @@
 		  "const ll mod=1000000007;",
 		  "const ll maxn=1e5+5;",
 		  "",
+		  "void solve(){",
+		  "    $0",
+		  "}",
+		  "",
 		  "int main(){",
-		  "	ios_base::sync_with_stdio(false), cin.tie(nullptr);",
-		  "	//freopen(\"input.txt\",\"r\",stdin);",
-		  "	//freopen(\"output.txt\",\"w\",stdout);",
-		  "	",
-		  "	return 0;",
+		  "    ios_base::sync_with_stdio(false), cin.tie(nullptr);",
+		  "    //freopen(\"input.txt\",\"r\",stdin);",
+		  "    //freopen(\"output.txt\",\"w\",stdout);",
+		  "    ll t=1;",
+		  "    // cin>>t;",
+		  "    while(t--)  solve();",
+		  "    return 0;",
 		  "}"
 		],
-		"description": "C++ Snippet"
+		"description": "C++ snippet"
 	},
 	"Prevents from hacking": {
 		"prefix": "custom_hash",
