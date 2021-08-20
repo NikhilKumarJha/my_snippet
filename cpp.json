@@ -45,7 +45,7 @@
 		  "#endif",
 		  "",
 		  "#define ll long long",
-		  "#define lld long double",
+		  "#define lld double",
 		  "#define all(x) x.begin(), x.end()",
 		  "#define iceil(n, x) (((n) + (x) - 1) / (x))",
 		  "#define gcd(a,b)	__gcd(a,b)",
