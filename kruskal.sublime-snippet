@@ -1,0 +1,34 @@
+<snippet>
+  <content><![CDATA[
+ll n,m;
+struct edge{
+   ll x,y,wt;
+	 bool operator<(edge const& other){
+		return (wt<other.wt);
+	}
+};
+vector<edge> edges;
+void kruskal(){
+	cin>>n>>m;
+	ll cost=0;
+	for(ll i=1;i<=m;i++){
+		ll x,y,w;	cin>>x>>y>>w;
+		edges.push_back({x,y,w});
+		edges.push_back({y,x,w});
+	}
+	dsu d(n);
+	sort(all(edges));
+	for(auto &e:edges){
+		if(d.find_par(e.x)!=d.find_par(e.y)){
+			d.unite(e.x,e.y);
+			cost+=e.wt;
+		}
+	}
+	cout<<cost<<'\n';
+}
+]]></content>
+  <tabTrigger>kruskal</tabTrigger>
+  <description>Kruskal MST</description>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <!-- <scope >source.python</scope > -->
+</snippet>

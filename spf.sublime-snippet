@@ -1,0 +1,27 @@
+<snippet>
+  <content><![CDATA[
+ll spf[maxn];
+void SPF() {
+	spf[1] = 1;
+	for (ll i = 2; i < maxn; i++) spf[i] = i;
+	for (ll i=4; i<maxn; i+=2) spf[i] = 2;
+	for (ll i=3; i*i<maxn; i++) {
+		if (spf[i] == i) {
+			for (ll j=i*i; j<maxn; j+=i)
+				if (spf[j]==j) spf[j] = i;
+		}
+	}
+}
+ll check[maxn];
+void getFactorization(ll x) {
+	while (x != 1) {
+		check[spf[x]] = 1;
+		x = x / spf[x];
+	}
+}
+]]></content>
+  <tabTrigger>spf</tabTrigger>
+  <description>Smallest prime number in log(n)</description>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <!-- <scope >source.python</scope > -->
+</snippet>

@@ -1,0 +1,70 @@
+<snippet>
+  <content><![CDATA[
+inline ll gilbertOrder(ll x, ll y, ll pow, ll rotate) {
+	if (pow == 0) {
+		return 0;
+	}
+	ll hpow = 1LL << (pow-1);
+	ll seg = (x < hpow) ? (
+		(y < hpow) ? 0 : 3
+	) : (
+		(y < hpow) ? 1 : 2
+	);
+	seg = (seg + rotate) & 3;
+	const ll rotateDelta[4] = {3, 0, 0, 1};
+	ll nx = x & (x ^ hpow), ny = y & (y ^ hpow);
+	ll nrot = (rotate + rotateDelta[seg]) & 3;
+	ll subSquareSize = 1LL << (2*pow - 2);
+	ll ans = seg * subSquareSize;
+	ll add = gilbertOrder(nx, ny, pow-1, nrot);
+	ans += (seg == 1 || seg == 2) ? add : (subSquareSize - add - 1);
+	return ans;
+}
+struct query{
+	ll l,r,idx;
+	ll ord;
+ 
+	inline void calcOrder() {
+		ord = gilbertOrder(l, r, 22, 0);
+	}
+	inline bool operator<(const query &b) const {
+		return this->ord < b.ord;
+	}
+};	// use qry[i].calcOrder while taking input in queries
+vector<query> qry(maxn);
+vector<ll> ans(maxn);
+struct mo{
+	ll ML,MR;
+	ll m;
+	ll res=0;
+
+	mo(ll m){
+		sort(qry.begin(),qry.begin()+m);
+		this->m=m;	
+		ML = qry[0].l , MR = qry[0].l-1 ;
+	}
+	inline void add(ll idx){
+		// TODO
+	}
+	inline void remove(ll idx){
+		// TODO
+	}
+	void compute(){
+		for(ll i=0;i<m;i++){
+			while( MR < qry[i].r ) add(++MR);
+			while( MR > qry[i].r ) remove(MR--);
+			while( ML < qry[i].l ) remove(ML++);
+			while( ML > qry[i].l ) add(--ML);
+			ans[qry[i].idx] = res;
+		}
+		for(ll i=0;i<m;i++){
+			cout<<ans[i]<<"\n";
+		}
+	}
+};
+]]></content>
+  <tabTrigger>mo</tabTrigger>
+  <description>MO's algorithm</description>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <!-- <scope >source.python</scope > -->
+</snippet>

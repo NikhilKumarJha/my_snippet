@@ -1,0 +1,19 @@
+<snippet>
+  <content><![CDATA[
+ll fpm(ll x,ll y,ll mod){
+	ll res=1;
+	while(y>0){
+		if(y&1LL){
+			res=(res*x)%mod;
+		}
+		y=y>>1LL;
+		x=(x*x)%mod;
+	}
+	return (res%mod);
+}
+]]></content>
+  <tabTrigger>fpm</tabTrigger>
+  <description>Fast power</description>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <!-- <scope >source.python</scope > -->
+</snippet>

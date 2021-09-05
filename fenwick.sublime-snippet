@@ -1,0 +1,41 @@
+<snippet>
+  <content><![CDATA[
+struct fenwick{         
+	// bit[i]=summation in range(p[i]...i);
+	// p[i] is magic function for performing efficient operation
+	// p[i]=i&(i+1) , used for going backward efficietly in BIT array;
+	// for going forward in BIT array efficiently , i=(i|(i+1))
+
+	vector<ll> bit;
+	ll n;
+	fenwick(ll n){
+		this->n=n;
+		bit.resize(n,0);
+	}
+	fenwick(vector<ll>& a):fenwick(a.size()){
+		for(ll i=0;i<a.size();i++){
+			upd(i,a[i]);
+		}
+	}
+	void upd(ll idx,ll val){
+		for(;idx<n;idx=(idx|(idx+1))){
+			bit[idx]+=val;
+		}
+	}
+	ll query(ll r){
+		ll ans=0;
+		for(;r>=0;r=(r&(r+1))-1){
+			ans+=bit[r];
+		}
+		return ans;
+	}
+	ll rquery(ll l,ll r){
+		return query(r)-query(l-1);
+	}
+};
+]]></content>
+  <tabTrigger>fenwick</tabTrigger>
+  <description>Fenwick Tree</description>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <!-- <scope >source.python</scope > -->
+</snippet>

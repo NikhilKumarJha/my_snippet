@@ -1,0 +1,47 @@
+<snippet>
+  <content><![CDATA[
+vector<long long> a(maxn);
+struct sqrt_dec{
+	ll n;
+	ll b_s;
+	vector<long long> b;
+	sqrt_dec(ll N){
+		n = N;
+		b_s = sqrt(n)+1;
+		b.resize(b_s,0);
+		for(ll i=0;i<n;i++){
+			b[i/b_s] += a[i];
+		}
+	}
+	void upd(ll i,long long val){
+		b[i/b_s] += val - a[i];
+		a[i] = val;
+	}
+	long long query(ll l,ll r){
+		long long ans=0;
+		ll b_l = l/b_s, b_r = r/b_s;
+		if(b_l == b_r){
+			for(ll i=l;i<=r;i++){
+				ans += a[i]; 
+			}
+		}else{
+			ll j = (b_l+1)*b_s-1;
+			for(ll i=l;i<=j;i++){
+				ans += a[i];
+			}
+			for(ll i=b_l+1;i<b_r;i++){
+				ans += b[i];
+			}
+			for(ll i=b_r*b_s;i<=r;i++){
+				ans += a[i];
+			}
+		}
+		return ans;
+	}
+};
+]]></content>
+  <tabTrigger>sqrt</tabTrigger>
+  <description>Sqrt Decomposition</description>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <!-- <scope >source.python</scope > -->
+</snippet>

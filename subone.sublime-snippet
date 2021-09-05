@@ -1,0 +1,22 @@
+<snippet>
+  <content><![CDATA[
+string subone(string& num){
+	string res = "";
+	bool done = 0;
+	for(int i = num.length() - 1; i >=0; i--){
+	   if(num[i] != '0')
+			{num[i] = char(num[i] - 1);break;}
+		else num[i] = '9';
+	}
+	for(int i = 0; i < num.length(); i++){
+			res.push_back(num[i]);
+	}
+	//if(res == "")res ="0";
+	return res;
+}
+]]></content>
+  <tabTrigger>subone</tabTrigger>
+  <description>Subtract one from string</description>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <!-- <scope >source.python</scope > -->
+</snippet>

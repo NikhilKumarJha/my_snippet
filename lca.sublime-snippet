@@ -1,0 +1,40 @@
+<snippet>
+  <content><![CDATA[
+vector<vector<ll>> up(maxn,vector<ll>(log2(maxn)+5));
+vector<ll> g[maxn];
+ll tin[maxn],tout[maxn];
+ll timer=0;
+
+void dfs(ll v, ll p){
+	tin[v] = ++timer;
+	up[v][0] = p;
+	for (ll i = 1; i <= log2(maxn); ++i){
+		up[v][i] = up[up[v][i-1]][i-1];
+	}
+
+	for (ll u : g[v]) {
+		if (u != p)
+			dfs(u, v);
+	}
+
+	tout[v] = ++timer;
+}
+bool is_ancestor(ll u, ll v){
+	return tin[u] <= tin[v] && tout[u] >= tout[v];
+}
+ll lca(ll u, ll v){
+	if (is_ancestor(u, v))	return u;
+	if (is_ancestor(v, u))	return v;
+	for (ll i = log2(maxn); i >= 0; --i) {
+		if (!is_ancestor(up[u][i], v)){
+			u = up[u][i];
+		}
+	}
+	return up[u][0];
+}
+]]></content>
+  <tabTrigger>lca</tabTrigger>
+  <description>Lowest Common Ancestor</description>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <!-- <scope >source.python</scope > -->
+</snippet>

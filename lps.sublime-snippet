@@ -1,0 +1,21 @@
+<snippet>
+  <content><![CDATA[
+vector<ll> prefix_function(string& s) {
+	ll n = s.size();
+	vector<ll> pi(n,0);
+	for (ll i = 1; i < n; i++) {
+		ll l = pi[i-1];
+		while (l > 0 && s[i] != s[l])
+			l = pi[l-1];
+		if (s[i] == s[l])
+			l++;
+		pi[i] = l;
+	}
+	return pi;
+}
+]]></content>
+  <tabTrigger>lps</tabTrigger>
+  <description>Prefix function</description>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <!-- <scope >source.python</scope > -->
+</snippet>

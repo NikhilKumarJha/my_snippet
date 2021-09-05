@@ -1,0 +1,20 @@
+<snippet>
+  <content><![CDATA[
+bool prime[maxn];
+vector<ll> primes;
+void sieve(){
+	memset(prime, true, sizeof(prime));
+	for (ll p = 2; p * p <= maxn; p++){
+		if (prime[p] == true) {
+			for (ll i = p * p; i <= maxn; i += p)
+				prime[i] = false;
+		}
+	}
+	for (ll p = 2; p <= maxn; p++) if (prime[p])   primes.push_back(p);
+}
+]]></content>
+  <tabTrigger>sieve</tabTrigger>
+  <description>Seive of eratosthenes</description>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <!-- <scope >source.python</scope > -->
+</snippet>
