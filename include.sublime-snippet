@@ -1,5 +1,8 @@
 <snippet>
   <content><![CDATA[
+#pragma GCC optimize("O3,unroll-loops")
+#pragma GCC target("avx,avx2,sse,sse2,sse3,sse4,popcnt,bmi,bmi2,lzcnt")
+ 
 #include <bits/stdc++.h>
 using namespace std;
 #include <ext/pb_ds/assoc_container.hpp>
@@ -48,7 +51,8 @@ const ll mod=1000000007;
 const ll maxn=1e5+5;
 
 void solve(){
-  $0
+	${1}
+	$0
 }
 
 int main(){
