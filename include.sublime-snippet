@@ -41,7 +41,7 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #define all(x) x.begin(), x.end()
 #define iceil(n, x) (((n) + (x) - 1) / (x))
 #define gcd(a,b)	__gcd(a,b)
-#define lcm(a,b)	__detail::__lcm(a,b)
+ll lcm(ll a,ll b){	return (a*b)/(__gcd(a,b));  }
 #define goog(tno) cout << "Case #" << tno <<": "
 
 ll dx[]= {-1,-1,-1,0,0,1,1,1};
