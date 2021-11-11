@@ -162,7 +162,7 @@ struct update1{
 	// these default values should be identity_transformation
 	
 	update1() {}
-	update1(int val){
+	update1(ll val){
 		v=val;
 	}
 	// combine the current update1 with the other update1
