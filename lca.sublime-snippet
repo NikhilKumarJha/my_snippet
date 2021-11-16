@@ -5,6 +5,7 @@ vector<ll> g[maxn];
 ll tin[maxn],tout[maxn];
 ll timer=0;
 
+// never call dfs(1,0) or dfs(1,-1) in lca specifically , always call dfs(1,1) OR YOU CAN BE FUCKED UP  
 void dfs(ll v, ll p){
 	tin[v] = ++timer;
 	up[v][0] = p;
