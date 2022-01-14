@@ -1,7 +1,5 @@
-<snippet>
-  <content><![CDATA[
 #pragma GCC optimize("O3,unroll-loops")
-#pragma GCC target("avx2,bmi2,lzcnt,popcnt")
+#pragma GCC target("avx2,bmi,bmi2,lzcnt,popcnt")
 
 #include "bits/stdc++.h"
 using namespace std;
@@ -10,28 +8,10 @@ using namespace std;
 using namespace __gnu_pbds;
 template<class key, class cmp = std::less<key>>
 using oset = tree<key, null_type, cmp, rb_tree_tag, tree_order_statistics_node_update>;
-
-void __print(int x) {cerr << x;}
-void __print(long long x) {cerr << x;}
-void __print(unsigned x) {cerr << x;}
-void __print(unsigned long long x) {cerr << x;}
-void __print(double x) {cerr << x;}
-void __print(long double x) {cerr << x;}
-void __print(char x) {cerr << '\'' << x << '\'';}
-void __print(const char *x) {cerr << '\"' << x << '\"';}
-void __print(const string &x) {cerr << '\"' << x << '\"';}
-void __print(bool x) {cerr << (x ? "true" : "false");} 
-template<typename T, typename V>
-void __print(const pair<T, V> &x) {cerr << '{'; __print(x.first); cerr << ','; __print(x.second); cerr << '}';}
-template<typename T>
-void __print(const T &x) {int f = 0; cerr << '{'; for (auto &i : x) cerr << (f++ ? "," : ""), __print(i); cerr << "}";}
-void _print() {cerr << "]\n";}
-template <typename T, typename... V>
-void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v...);}
 #ifndef ONLINE_JUDGE
-#define bug(x...) cerr << "[" << #x << "] = ["; _print(x)
+#include "bug.h"
 #else
-#define bug(x...)
+#define bug(...) 69
 #endif
 
 #define ll long long
@@ -47,21 +27,15 @@ const ll mod=1000000007;
 const ll maxn=1e5+5;
 
 void solve(){
-		
+    
 }
 
 signed main(){
-	ios_base::sync_with_stdio(false), cin.tie(nullptr);
-	//freopen("input.txt","r",stdin);
-	//freopen("output.txt","w",stdout);
-	ll t=1;
-	// cin>>t;
-	while(t--)  solve();
-	return 0;
+    ios_base::sync_with_stdio(false), cin.tie(nullptr);
+    //freopen("input.txt","r",stdin);
+    //freopen("output.txt","w",stdout);
+    ll t=1;
+    // cin>>t;
+    while(t--)  solve();
+    return 0;
 }
-]]></content>
-  <tabTrigger>include</tabTrigger>
-  <description>include</description>
-  <!-- Optional: Set a scope to limit where the snippet will trigger -->
-  <!-- <scope >source.c++</scope > -->
-</snippet>
