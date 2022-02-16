@@ -13,7 +13,7 @@ using oset = tree<key, null_type, cmp, rb_tree_tag, tree_order_statistics_node_u
 #ifndef ONLINE_JUDGE
 #include "bug.h"
 #else
-#define bug(...) 69
+#define bug(...) 
 #endif
 
 #define ll long long
@@ -22,8 +22,6 @@ using oset = tree<key, null_type, cmp, rb_tree_tag, tree_order_statistics_node_u
 #define iceil(n, x) (((n) + (x) - 1) / (x))
 #define goog(tno) cout << "Case #" << tno <<": "
 
-ll dx[]= {-1,-1,-1,0,0,1,1,1};
-ll dy[]= {-1,0,1,-1,1,-1,0,1};
 const ll INF=2e18;
 const ll mod=1000000007;
 const ll maxn=1e5+5;
