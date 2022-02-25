@@ -10,7 +10,7 @@ using namespace std;
 using namespace __gnu_pbds;
 template<class key, class cmp = std::less<key>>
 using op_set = tree<key, null_type, cmp, rb_tree_tag, tree_order_statistics_node_update>;
-#ifndef ONLINE_JUDGE
+#ifdef thunder
 #include "bug.h"
 #else
 #define bug(...) 
@@ -34,7 +34,7 @@ signed main(){
     ios_base::sync_with_stdio(false), cin.tie(nullptr);
     //freopen("input.txt","r",stdin);
     //freopen("output.txt","w",stdout);
-    ll t=1;
+    int t=1;
     // cin>>t;
     while(t--)  solve();
     return 0;
