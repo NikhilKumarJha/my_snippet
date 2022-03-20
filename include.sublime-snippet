@@ -36,7 +36,9 @@ signed main(){
     //freopen("output.txt","w",stdout);
     int t=1;
     // cin>>t;
-    while(t--)  solve();
+    for(int i=1;i<=t;i++){
+        solve();
+    }
     return 0;
 }
 ]]></content>
