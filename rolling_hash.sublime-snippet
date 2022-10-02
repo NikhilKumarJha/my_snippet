@@ -1,0 +1,40 @@
+<snippet>
+  <content><![CDATA[
+ll b1,b2;
+vector<ll> pb1(maxn),pb2(maxn);
+struct hsh{
+    const int32_t M=1e9+7;
+    const int32_t MM=998244353;
+
+    ll n;
+    vector<ll> v1,v2;
+    hsh(string &s){
+        mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+        auto dist=uniform_int_distribution<int>(1000,5000); // take care here for range of base p
+        b1 = dist(rng);
+        b2 = dist(rng);
+        pb1[0] = pb2[0] = 1;
+        for(ll i=1;i<maxn;i++){
+            pb1[i] = pb1[i-1] * 1ll * b1 % M;
+            pb2[i] = pb2[i-1] * 1ll * b2 % MM;
+        }
+        n=s.size();
+        v1.resize(n+1);
+        v2.resize(n+1);
+        for(ll i=1;i<=n;i++){
+            v1[i]=(v1[i-1]+s[i-1]*pb1[i-1])%M;
+            v2[i]=(v2[i-1]+s[i-1]*pb2[i-1])%MM;
+        }
+    }
+    pair<ll, ll> sub(ll l,ll r){
+        ll h1=((v1[r+1]-v1[l]+M)*pb1[n-r])%M;
+        ll h2=((v2[r+1]-v2[l]+MM)*pb2[n-r])%MM;
+        return {h1,h2};
+    }
+};
+]]></content>
+  <tabTrigger>rolling_hash</tabTrigger>
+  <description>Rolling_Hash</description>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <!-- <scope >source.python</scope > -->
+</snippet>
