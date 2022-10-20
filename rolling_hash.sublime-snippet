@@ -4,14 +4,14 @@ ll b1,b2;
 vector<ll> pb1(maxn),pb2(maxn);
 struct hsh{
     const int32_t M=1e9+7;
-    const int32_t MM=998244353;
+    const int32_t MM=998244353; // in dono ko bhi bahar rakho, warna TLE de dega bhai
 
     ll n;
     vector<ll> v1,v2;
     hsh(string &s){
         mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
-        auto dist=uniform_int_distribution<int>(1000,5000); // take care here for range of base p
-        b1 = dist(rng);
+        auto dist=uniform_int_distribution<int>(1000,5000); // take care here for range of base p, aur is poore ko bahar likho bhai wanra multi test cases me tle de dega 
+        b1 = dist(rng); // dont use random base when two diff strings are used for same comparision like for string and its reverse
         b2 = dist(rng);
         pb1[0] = pb2[0] = 1;
         for(ll i=1;i<maxn;i++){
