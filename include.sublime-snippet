@@ -20,7 +20,6 @@ using op_set = tree<key, null_type, cmp, rb_tree_tag, tree_order_statistics_node
 #define lld double
 #define all(x) x.begin(), x.end()
 #define iceil(n, x) (((n) + (x) - 1) / (x))
-#define goog(tno) cout << "Case #" << tno <<": "
 
 const ll INF=2e18;
 const ll mod=1000000007;
