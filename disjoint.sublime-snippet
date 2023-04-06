@@ -23,7 +23,7 @@ struct dsu{
 		ll par2=find_par(v);
 		if(par1==par2)  return;
 		connected_comp--;
-		if(sz[par1]>sz[par2])   swap(par1,par2);
+		if(sz[par1]>sz[par2])   swap(par1,par2);	// small to large merging to reduce time complexity
 		sz[par2]+=sz[par1];
 		sz[par1]=0;
 		par[par1]=par[par2];
