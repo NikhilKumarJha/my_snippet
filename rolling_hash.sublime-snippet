@@ -2,36 +2,68 @@
   <content><![CDATA[
 ll b1,b2;
 vector<ll> pb1(maxn),pb2(maxn);
-struct hsh{
-    const int32_t M=1e9+7;
-    const int32_t MM=998244353; // in dono ko bhi bahar rakho, warna TLE de dega bhai
+vector<ll> inv1(maxn),inv2(maxn);
+const int32_t M=1e9+7;
+const int32_t MM=998244353; 
 
+ll fpm(ll x,ll y,ll mod){
+    ll res=1;
+    while(y>0){
+        if(y&1LL){
+            res=(res*x)%mod;
+        }
+        y=y>>1LL;
+        x=(x*x)%mod;
+    }
+    return (res%mod);
+}
+
+struct hsh{
     ll n;
     vector<ll> v1,v2;
     hsh(string &s){
-        mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
-        auto dist=uniform_int_distribution<int>(1000,5000); // take care here for range of base p, aur is poore ko bahar likho bhai wanra multi test cases me tle de dega 
-        b1 = dist(rng); // dont use random base when two diff strings are used for same comparision like for string and its reverse
-        b2 = dist(rng);
-        pb1[0] = pb2[0] = 1;
-        for(ll i=1;i<maxn;i++){
-            pb1[i] = pb1[i-1] * 1ll * b1 % M;
-            pb2[i] = pb2[i-1] * 1ll * b2 % MM;
-        }
         n=s.size();
-        v1.resize(n+1);
-        v2.resize(n+1);
-        for(ll i=1;i<=n;i++){
-            v1[i]=(v1[i-1]+s[i-1]*pb1[i-1])%M;
-            v2[i]=(v2[i-1]+s[i-1]*pb2[i-1])%MM;
+        v1.resize(n);
+        v2.resize(n);
+        v1[0]=(s[0]-'a'+1);
+        v1[0]=(s[0]-'a'+1);
+        for(ll i=1;i<n;i++){
+            v1[i]=(v1[i-1]+((s[i]-'a'+1)*pb1[i])%M)%M;
+            v2[i]=(v2[i-1]+((s[i]-'a'+1)*pb2[i])%MM)%MM;
         }
     }
     pair<ll, ll> sub(ll l,ll r){
-        ll h1=((v1[r+1]-v1[l]+M)*pb1[n-r])%M;
-        ll h2=((v2[r+1]-v2[l]+MM)*pb2[n-r])%MM;
+        ll h1=v1[r];
+        if(l-1>=0){
+            h1-=v1[l-1];
+        }
+        if(h1<0){
+            h1+=M;
+        }
+        h1%=M;
+        h1*=inv1[l];
+        h1%=M;
+        ll h2=v2[r];
+        if(l-1>=0){
+            h2-=v2[l-1];
+        }
+        h2%=MM;
+        h2*=inv2[l];
+        h2%=MM;
         return {h1,h2};
     }
 };
+
+b1 = 31; 
+b2 = 29;
+pb1[0] = pb2[0] = 1;
+inv1[0]=inv2[0]=1;
+for(ll i=1;i<maxn;i++){
+    pb1[i] = pb1[i-1] * 1ll * b1 % M;
+    pb2[i] = pb2[i-1] * 1ll * b2 % MM;
+    inv1[i]=fpm(pb1[i],M-2,M);
+    inv2[i]=fpm(pb2[i],MM-2,MM);
+}
 ]]></content>
   <tabTrigger>rolling_hash</tabTrigger>
   <description>Rolling_Hash</description>
