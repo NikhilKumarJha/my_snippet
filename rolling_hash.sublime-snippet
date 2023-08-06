@@ -26,7 +26,7 @@ struct hsh{
         v1.resize(n);
         v2.resize(n);
         v1[0]=(s[0]-'a'+1);
-        v1[0]=(s[0]-'a'+1);
+        v2[0]=(s[0]-'a'+1);
         for(ll i=1;i<n;i++){
             v1[i]=(v1[i-1]+((s[i]-'a'+1)*pb1[i])%M)%M;
             v2[i]=(v2[i-1]+((s[i]-'a'+1)*pb2[i])%MM)%MM;
@@ -35,19 +35,15 @@ struct hsh{
     pair<ll, ll> sub(ll l,ll r){
         ll h1=v1[r];
         if(l-1>=0){
-            h1-=v1[l-1];
+            h1=(h1-v1[l-1]+M)%M;
         }
-        if(h1<0){
-            h1+=M;
-        }
-        h1%=M;
         h1*=inv1[l];
         h1%=M;
+        
         ll h2=v2[r];
         if(l-1>=0){
-            h2-=v2[l-1];
+            h2=(h2-v2[l-1]+MM)%MM;
         }
-        h2%=MM;
         h2*=inv2[l];
         h2%=MM;
         return {h1,h2};
