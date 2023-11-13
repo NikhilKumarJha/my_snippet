@@ -1,1 +1,1 @@
-# C++ Templates
+# Algo Snippets
