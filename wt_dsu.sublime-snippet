@@ -1,0 +1,43 @@
+<snippet>
+	<content><![CDATA[
+struct wt_dsu{
+	ll connected_comp;
+	vector<pair<ll, ll>> par;
+	vector<ll> sz;
+	wt_dsu(ll n){
+		par.resize(n+1);
+		sz.resize(n+1,0);
+		for(ll i=1;i<=n;i++){
+			par[i]={i,0};	
+			sz[i]=1;
+		}
+		connected_comp=n;
+	}
+	pair<ll, ll> find_par(ll u){
+		if(u!=par[u].first){
+			ll len=par[u].second;
+			par[u]=find_par(par[u].first);
+			par[u].second+=len;
+		}
+		return par[u];
+	}
+	bool unite(ll u,ll v,ll x){
+		auto [par1,wt1]=find_par(u);
+		auto [par2,wt2]=find_par(v);
+		if(par1==par2)  return wt1-wt2==x;
+		connected_comp--;
+		par[par2]=par[par1];
+		par[par2].second=wt1-wt2-x;
+		return true;
+	}
+	ll get_size(ll u){
+		return sz[find_par(u).first];
+	}
+};
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>wt_dsu</tabTrigger>
+	<description>weighted dsu</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
