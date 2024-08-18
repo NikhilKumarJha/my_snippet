@@ -1,26 +1,37 @@
 <snippet>
 	<content><![CDATA[
 struct set_hash{
-    const ll k=998244353;
-    const ll h=61;
+    const ll k1=998244353;
+    const ll h1=61;
+    const ll m1=999999937;
+    const ll k2=999999929;
+    const ll h2=71;
+    const ll m2=1000000007;
     ll n;
-    vector<ll> hash;
+    vector<ll> hash1,hash2;
     set_hash(vector<ll> &a){
         this->n=a.size();
-        hash.resize(n);
-        hash[0]=fpm(a[0]+k,h,mod);
+        hash1.resize(n);
+        hash2.resize(n);
+        hash1[0]=fpm(a[0]+k1,h1,m1);
+        hash2[0]=fpm(a[0]+k1,h1,m2);
         for(ll i=1;i<n;i++){
-            hash[i]=hash[i-1]+fpm(a[i]+k,h,mod);
-            hash[i]%=mod;
+            hash1[i]=(hash1[i-1]+fpm(a[i]+k1,h1,m1))%m1;
+            hash2[i]=(hash2[i-1]+fpm(a[i]+k1,h1,m2))%m2;
         }
     }
-    ll sub_hash(ll l,ll r){
-        ll sum=hash[r];
-        if(l)   sum-=hash[l-1];
-        if(sum<0)
-            sum+=mod;
-        sum%=mod;
-        return sum;
+    pair<ll, ll> sub_hash(ll l,ll r){
+        ll sum1=hash1[r];
+        if(l)   sum1-=hash1[l-1];
+        if(sum1<0)
+            sum1+=m1;
+        sum1%=m1;
+        ll sum2=hash2[r];
+        if(l)   sum2-=hash2[l-1];
+        if(sum2<0)
+            sum2+=m2;
+        sum2%=m2;
+        return {sum1,sum2};
     }
 };
 ]]></content>
