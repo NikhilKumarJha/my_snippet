@@ -1,0 +1,32 @@
+<snippet>
+	<content><![CDATA[
+struct set_hash{
+    const ll k=998244353;
+    const ll h=61;
+    ll n;
+    vector<ll> hash;
+    set_hash(vector<ll> &a){
+        this->n=a.size();
+        hash.resize(n);
+        hash[0]=fpm(a[0]+k,h,mod);
+        for(ll i=1;i<n;i++){
+            hash[i]=hash[i-1]+fpm(a[i]+k,h,mod);
+            hash[i]%=mod;
+        }
+    }
+    ll sub_hash(ll l,ll r){
+        ll sum=hash[r];
+        if(l)   sum-=hash[l-1];
+        if(sum<0)
+            sum+=mod;
+        sum%=mod;
+        return sum;
+    }
+};
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>set_hash</tabTrigger>
+	<description>Set based hashing where order does not matter</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
