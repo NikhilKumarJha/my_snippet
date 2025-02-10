@@ -119,6 +119,9 @@ struct update1{
 		x.sum=v;
 	}
 };
+
+// https://leetcode.com/problems/maximum-subarray/
+
 ]]></content>
   <tabTrigger>segTree</tabTrigger>
   <description>Segment Tree</description>
